@@ -1,0 +1,41 @@
+{
+  "name": "npm-jga-commonlib",
+  "version": "0.0.5",
+  "description": "Basic library",
+  "main": "npm-jga-commonlib.js",
+  "scripts": {
+    "watch": "tsc -p src -w",
+    "build": "rm -rf lib && tsc -p src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgaspard-fa.git"
+  },
+  "keywords": [
+    "Angular",
+    "2",
+    "Library",
+    "Seed"
+  ],
+  "author": "joelgaspardjg@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgaspard-fa/issues"
+  },
+  "homepage": "https://github.com/jgaspard-fa#readme",
+  "devDependencies": {
+    "typescript": "2.0.2"
+  },
+  "dependencies": {
+    "@angular/common": "2.0.0",
+    "@angular/compiler": "2.0.0",
+    "@angular/core": "2.0.0",
+    "@angular/forms": "2.0.0",
+    "@angular/http": "2.0.0",
+    "@angular/platform-browser": "2.0.0",
+    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/platform-server": "2.0.0",
+    "@angular/router": "3.0.0",
+    "rxjs": "5.0.0-beta.12"
+  }
+}
