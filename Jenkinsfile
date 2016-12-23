@@ -17,7 +17,7 @@ node {
    //non git url: 'git@github.com:financeactive/' + repository + '.git'
    //ok git url: 'https://github.com/jgaspard-fa/' + repo + '.git'
    //non git url: 'https://github.com/financeactive/' + repository
-   git branch: 'develop', url: 'git@github.com:financeactive/pricerwebapps.git'
+   git branch: 'develop', url: 'git@github.com:jgaspard-fa/gitflow-fa.git'
    
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
@@ -32,23 +32,23 @@ node {
    //def buildCommand = "${mvnHome}" + '/bin/mvn -V  -P' + "${profile}" + ' clean package'
    
    //withEnv(['M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9']) {
-        //sh "${mvnHome}/bin/mvn -V clean"
+        sh "${mvnHome}/bin/mvn -V clean"
    //}
    
    stage 'Merge'
-   //sh "git merge release-0.57.0"
-   //sh "git push --set-upstream origin develop"
-   //sh "git checkout -b master origin/master"
-   //sh "git merge release-0.57.0"
-   //sh "git push"
+   sh "git merge release-0.57.0"
+   sh "git push --set-upstream origin develop"
+   sh "git checkout -b master origin/master"
+   sh "git merge release-0.57.0"
+   sh "git push"
    
    stage 'Finish release'
-   //sh "${mvnHome}/bin/mvn -V -Dusername=jgaspard-fa -Dpassword=git87=m -DnoReleaseMerge -DkeepBranch clean jgitflow:release-finish"
+   sh "${mvnHome}/bin/mvn -V -Dusername=jgaspard-fa -Dpassword=git87=m -DnoReleaseMerge -DkeepBranch clean jgitflow:release-finish"
    
-   //sh "git checkout master"
-   //sh "git merge release-0.57.0 -s recursive -Xtheirs"
-   //sh "git push"
-   //sh "git push origin --delete release-0.57.0"
+   sh "git checkout master"
+   sh "git merge release-0.57.0 -s recursive -Xtheirs"
+   sh "git push"
+   sh "git push origin --delete release-0.57.0"
    
    
    //if (profileTest)
