@@ -31,9 +31,9 @@ node {
    // org.jenkinsci.plugins.scriptsecurity.sandbox.RejectedAccessException: Scripts not permitted to use method groovy.lang.GString plus java.lang.String
    //def buildCommand = "${mvnHome}" + '/bin/mvn -V  -P' + "${profile}" + ' clean package'
    
-   withEnv(['M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9']) {
+   //withEnv(['M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9']) {
         sh "${mvnHome}/bin/mvn -V clean"
-   }
+   //}
    
    if (profileTest)
         step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
