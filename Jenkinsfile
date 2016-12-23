@@ -3,17 +3,6 @@ node {
     
    // Mark the code checkout 'stage'....
    stage 'Checkout'
-   
-   def profileUnit = profile.indexOf('unit');
-   def profileIntegration = profile.indexOf('integration');
-   def profileCoverage = profile.indexOf('coverage');
-   println "DEBUG: profileUnit " + profileUnit
-   println "DEBUG: profileIntegration " + profileIntegration
-   println "DEBUG: profileCoverage " + profileCoverage
-   
-   def profileTest = (profileUnit != -1) || (profileIntegration != -1) || (profileCoverage != -1) 
-   println "DEBUG: profileTest " + profileTest
-   
    sh('echo $M2_HOME')
    sh('echo $M2_HOME > ECHO')
    def stdout = readFile('ECHO').trim()
