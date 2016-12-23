@@ -35,12 +35,14 @@ node {
         sh "${mvnHome}/bin/mvn -V clean"
    //}
    
+   stage 'Merge'
    sh "git merge release-0.57.0"
    sh "git push --set-upstream origin develop"
    sh "git checkout -b master origin/master"
    sh "git merge release-0.57.0"
    sh "git push"
    
+   stage 'Finish release'
    sh "${mvnHome}/bin/mvn -V -Dusername=jgaspard-fa -Dpassword=git87=m -DnoReleaseMerge -DkeepBranch clean jgitflow:release-finish"
    
    sh "git checkout master"
