@@ -8,7 +8,7 @@ node {
    def stdout = readFile('ECHO').trim()
    print "out: " + stdout
    
-   sh "export M2_HOME=/home/service/maven3"
+   sh "export M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9"
    sh('echo $M2_HOME > ECHO')
    def stdout2 = readFile('ECHO').trim()
    print "out: " + stdout2
@@ -18,6 +18,11 @@ node {
    //ok git url: 'https://github.com/jgaspard-fa/' + repo + '.git'
    //non git url: 'https://github.com/financeactive/' + repository
    git branch: 'develop', url: 'https://github.com/jgaspard-fa/gitflow-fa.git'
+   
+   // Get the maven tool.
+   // ** NOTE: This 'M3' maven tool must be configured
+   // **       in the global configuration.           
+   def mvnHome = tool 'M2'
 
    // Mark the code build 'stage'....
    stage 'Build'
@@ -27,7 +32,7 @@ node {
    //def buildCommand = "${mvnHome}" + '/bin/mvn -V  -P' + "${profile}" + ' clean package'
    
    withEnv(['M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9']) {
-        sh "mvn -V clean"
+        sh "${mvnHome}/bin/mvn -V clean"
    }
    
    if (profileTest)
