@@ -27,7 +27,7 @@ node {
    //def buildCommand = "${mvnHome}" + '/bin/mvn -V  -P' + "${profile}" + ' clean package'
    
    withEnv(['M2_HOME=/Users/jgaspard/Documents/DevTools/apache-maven-3.3.9']) {
-        sh "${mvnHome}/bin/mvn -V -P${profile} clean"
+        sh "mvn -V -P${profile} clean"
    }
    
    if (profileTest)
