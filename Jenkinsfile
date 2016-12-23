@@ -36,6 +36,7 @@ node {
    //}
    
    stage 'Merge'
+   sh "git remote set-url origin git@github.com:jgaspard-fa/gitflow-fa.git"
    sh "git merge release-0.57.0"
    sh "git push --set-upstream origin develop"
    sh "git checkout -b master origin/master"
