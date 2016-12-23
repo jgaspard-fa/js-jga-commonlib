@@ -46,7 +46,7 @@ node {
    sh "${mvnHome}/bin/mvn -V -Dusername=jgaspard-fa -Dpassword=git87=m -DnoReleaseMerge -DkeepBranch clean jgitflow:release-finish"
    
    sh "git checkout master"
-   sh "git merge release-0.57.0"
+   sh "git merge release-0.57.0 -s recursive -Xtheirs"
    sh "git push"
    sh "git push origin --delete release-0.57.0"
    
