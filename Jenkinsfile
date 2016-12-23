@@ -17,7 +17,7 @@ node {
    //non git url: 'git@github.com:financeactive/' + repository + '.git'
    //ok git url: 'https://github.com/jgaspard-fa/' + repo + '.git'
    //non git url: 'https://github.com/financeactive/' + repository
-   git branch: 'develop', url: 'https://github.com/jgaspard-fa/gitflow-fa.git'
+   git branch: 'develop', url: 'git@github.com:jgaspard-fa/gitflow-fa.git'
    
    // Get the maven tool.
    // ** NOTE: This 'M3' maven tool must be configured
