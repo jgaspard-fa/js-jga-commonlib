@@ -35,6 +35,8 @@ node {
         sh "${mvnHome}/bin/mvn -V clean"
    //}
    
-   if (profileTest)
-        step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+   sh "git checkout release-0.57.0"
+   
+   //if (profileTest)
+   //     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
