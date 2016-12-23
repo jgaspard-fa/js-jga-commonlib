@@ -36,8 +36,8 @@ node {
    //}
    
    sh "git merge release-0.57.0"
-   sh "git push"
-   sh "git checkout master"
+   sh "git push --set-upstream origin develop"
+   sh "git checkout -b master origin/master"
    sh "git merge release-0.57.0"
    sh "git push"
    
